@@ -1,48 +1,35 @@
-import { useState } from 'react'
 import { Home } from './Pages/Home'
-import {Cart} from './Pages/Cart'
-import {Favorites} from './Pages/Favorites'
-import {Order} from './Pages/Order'
+import { Cart } from './Pages/Cart'
+import { Favorites } from './Pages/Favorites'
+import { Order } from './Pages/Order'
 import Sidebar from './component/Sidebar'
-
 import {
-  createBrowserRouter,
-  RouterProvider,
-  createRoutesFromElements,
+  BrowserRouter as Router,
+  Routes,
   Outlet,
   Route
-}from 'react-router-dom'
+} from 'react-router-dom'
 
-function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path='/' element={<Root/>}>
-        <Route index element={<Home/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/favs' element={<Favorites/>}/>
-        <Route path='/orders' element={<Order/>}/>
+const App = () =>
+  <Router >
+    <Routes>
+      <Route path='/' element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/favs' element={<Favorites />} />
+        <Route path='/orders' element={<Order />} />
       </Route>
-    )
-  )
-  return (
-    <div className="App">
-     <RouterProvider router={router}/>
-    </div>
-  )
-}
+    </Routes>
+  </Router>
+
 export default App
 
-
-const Root = ()=>{
-  return(
-    <>
+const Root = () =>
+  <>
     <div>
-      <Sidebar/>
+      <Sidebar />
     </div>
     <div>
-      <Outlet/>
+      <Outlet />
     </div>
-    </>
-    
-  )
-}
+  </>

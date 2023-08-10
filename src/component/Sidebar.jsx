@@ -1,9 +1,7 @@
-import React from "react";
-import { AppstoreTwoTone , HomeTwoTone, ShoppingTwoTone , DollarTwoTone, HeartTwoTone } from '@ant-design/icons';
-import { NavLink } from "react-router-dom";
+import { AppstoreTwoTone , HomeTwoTone, ShoppingTwoTone , DollarTwoTone, HeartTwoTone } from '@ant-design/icons'
+import { NavLink } from "react-router-dom"
 
-const Sidebar = () => {
-  return (
+const Sidebar = () => 
     <div className="fixed top-0 left-0 h-screen p-2 bg-gray-100">
       <ul className="p-5 space-y-8">
         <li>
@@ -45,7 +43,5 @@ const Sidebar = () => {
         </li>
       </ul>
     </div>
-  );
-};
 
-export default Sidebar;
+export default Sidebar

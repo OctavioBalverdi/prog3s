@@ -1,8 +1,7 @@
-import React from 'react'
 import { ArrowLeftOutlined, DeleteOutlined }  from '@ant-design/icons'
 import adidas from '../assets/adidas.jpeg'
-const Cartitems = () => {
-  return (
+import { NavLink } from 'react-router-dom'
+const Cartitems = () => 
     <div>
       <div className='w-11/12 m-auto py-10'>
         <h1 className='text-3xl font-bold'>Carrito de Compras</h1>
@@ -46,10 +45,12 @@ const Cartitems = () => {
               </tbody>
             </table>
             <div className='my-5'>
+              <NavLink to='/'>
               <button className='flex items-center space-x-3 bg-gray-200 font-semibold rounded p-2'>
                 <ArrowLeftOutlined/>
                 <span>Continue Comprando</span>
               </button>
+              </NavLink>
             </div>
           </div>
           <div className='w-[40%] h-fit border rounded p-5 space-y-5'>
@@ -75,9 +76,6 @@ const Cartitems = () => {
           </div>
         </section>
       </div>
-
     </div>
-  )
-}
-
-export default Cartitems;
+  
+export default Cartitems

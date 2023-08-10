@@ -1,9 +1,7 @@
-import React from "react";
 import {ArrowLeftOutlined} from '@ant-design/icons'
 import {NavLink} from 'react-router-dom'
 
-export  function Favorites() {
-    return (
+export  const Favorites = () => 
       <div className='w-full h-screen flex justify-center items-center'>
         <div className='space-y-5 flex flex-col justify-center items-center '>
           <h1 className='text-xl font-semibold'>No tienes productos Favoritos</h1>
@@ -15,5 +13,3 @@ export  function Favorites() {
           </NavLink>
         </div>
       </div>
-    )
-  }

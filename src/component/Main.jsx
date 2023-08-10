@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import {SearchOutlined,ShoppingCartOutlined} from '@ant-design/icons'
 import adidas from '../assets/adidas.jpeg'
 import newbalance from '../assets/newbalance.jpeg'
@@ -43,42 +43,13 @@ const Main = () => {
       price:200,
       Talle:39-40-42
     },
-    // {
-    //   img:,
-    //   title:'Leather Watch',
-    //   description:'lorem ipsum dolar',
-    //   price:880
-    // },
-    // {
-    //   img:monitor,
-    //   title:'One plus monitor',
-    //   description:'lorem ipsum dolar',
-    //   price:40
-    // },
-    // {
-    //   img:sunGlass,
-    //   title:'Sun Glasses',
-    //   description:'lorem ipsum dolar',
-    //   price:40
-    // },
-    // {
-    //   img:mouse,
-    //   title:'Mouse',
-    //   description:'lorem ipsum dolar',
-    //   price:40
-    // },
-    // {
-    //   img:leatherWatch,
-    //   title:'leather',
-    //   description:'lorem ipsum dolar',
-    //   price:40
-    // }, 
+   
   ]
   const [filteredProducts,setFilteredProducts]=useState(Products)
   const searchHandler = (e)=>{
     const filteredArray= Products.filter((product)=> product.title.toLocaleLowerCase().includes(e.target.value))
     if(filteredArray.length !=0){
-      setFilteredProducts(filteredArray);
+      setFilteredProducts(filteredArray)
     }
   }
   return (
@@ -133,6 +104,8 @@ const Main = () => {
               <p className='text-sm'>{product.description}</p>
               <div className='flex justify-between items-center'>
                 <p className='text-xl font-bold'>${product.price}.00</p>
+                <br />
+                <p className='text-xl font-bold'>Talle: {product.talle}</p>
                 <ShoppingCartOutlined size={'1.4rem'}/>
               </div>
             </div>
@@ -145,4 +118,4 @@ const Main = () => {
   )
 }
 
-export default Main;
+export default Main
