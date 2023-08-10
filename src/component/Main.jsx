@@ -5,8 +5,11 @@ import newbalance from '../assets/newbalance.jpeg'
 import Nike from '../assets/Nike.jpg'
 import Nikej1 from '../assets/Nikej1.jpeg'
 import Puma from '../assets/Puma.jpeg'
+import {traer} from '../req/req'
 
 const Main = () => {
+
+  let productos=[traer("http://localhost:3000/usuario")]
   let Products =[
     {
       img:Nike,
@@ -47,7 +50,7 @@ const Main = () => {
   ]
   const [filteredProducts,setFilteredProducts]=useState(Products)
   const searchHandler = (e)=>{
-    const filteredArray= Products.filter((product)=> product.title.toLocaleLowerCase().includes(e.target.value))
+    const filteredArray= productos.filter((product)=> product.title.toLocaleLowerCase().includes(e.target.value))
     if(filteredArray.length !=0){
       setFilteredProducts(filteredArray)
     }

@@ -41,5 +41,20 @@
         "Talle":"39-40-42"
       }
      
+    ],
+    
+    "usuario" :[
+
+      {
+        "id": 1,
+        "usuario":"Octavio",
+        "contrasena": "Nadisabe"
+      },
+      
+      {
+        "id": 2,
+        "usuario":"Rodrigo",
+        "contrasena": "Todosaben"
+      }
     ]
 }

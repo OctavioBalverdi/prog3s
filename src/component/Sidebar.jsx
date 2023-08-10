@@ -1,17 +1,20 @@
 import { AppstoreTwoTone , HomeTwoTone, ShoppingTwoTone , DollarTwoTone, HeartTwoTone } from '@ant-design/icons'
 import { NavLink } from "react-router-dom"
 
-const Sidebar = () => 
-    <div className="fixed top-0 left-0 h-screen p-2 bg-gray-100">
+
+const Sidebar = () => {
+
+    return (<div className="fixed top-0 left-0 h-screen p-2 bg-gray-100">
       <ul className="p-5 space-y-8">
         <li>
-          <button>
+          <NavLink to='/registro' >
+          <button >
             <AppstoreTwoTone size={"1.5rem"} />
           </button>
+          </NavLink>
         </li>
-
         <li>
-          <NavLink to="/">
+          <NavLink to="/home">
             <button>
               <HomeTwoTone size={"1.5rem"} />
             </button>
@@ -41,7 +44,8 @@ const Sidebar = () =>
             </button>
           </NavLink>
         </li>
+        
       </ul>
-    </div>
-
+    </div>)
+}
 export default Sidebar
