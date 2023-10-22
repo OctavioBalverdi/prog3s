@@ -1,68 +1,66 @@
 //aqui van las peticiones
-export const traer= (url)=>{
+export const traer = (url) => {
     fetch(url)
-.then(resp => resp.json())
-.then(resp=>{return resp})
+        .then(resp => resp.json())
+        .then(resp => { return resp })
 
 }
 
+export const crear = async (info) => {
 
-
-export const crear= async (info)=>{
-    
-    try{
-        const response= await fetch("http://localhost:3000/Products",{
+    try {
+        const response = await fetch("http://localhost:3000/Products", {
             method: 'POST',
-            headres: {'content-pyte':'application/json'},
+            headres: { 'content-pyte': 'application/json' },
             body: JSON.stringify(info)
         })
 
-        if (info.ok){
-            const infoResp= await info.json()
+        if (info.ok) {
+            const infoResp = await info.json()
             console.log(infoResp)
         }
     }
-    catch(error){
+    catch (error) {
         console.log(error)
     }
-   
+
 }
 
-export const editar = async (info)=>{
-    
-    try{
-        const response= await fetch(`http://localhost:3000/Products/${info.id}`,{
+export const editar = async (info) => {
+
+    try {
+        const response = await fetch(`http://localhost:3000/Products/${info.id}`, {
             method: 'PUT',
-            headres: {'content-pyte':'application/json'},
+            headres: { 'content-pyte': 'application/json' },
             body: JSON.stringify(info)
         })
-        if (info.ok){
-            const infoResp= await info.json()
+        if (info.ok) {
+            const infoResp = await info.json()
             console.log(infoResp)
         }
 
     }
-    catch(error){
+    catch (error) {
         console.log(error)
     }
-   
+
 }
 
-export const borrar = async (info)=>{
-    let id=info.id
-    try{
-        const response= await fetch(`http://localhost:3000/Products/${id}`,{
+export const borrar = async (info) => {
+    let id = info.id
+    try {
+        const response = await fetch(`http://localhost:3000/Products/${id}`, {
             method: 'DELETE',
-            headres: {'content-pyte':'application/json'},
-           // body: JSON.stringify(id)
+            headres: { 'content-pyte': 'application/json' },
+            // body: JSON.stringify(id)
         })
         // if (info.ok){
         //     const infoResp= await info.json()
         //     console.log(infoResp)
         // }
     }
-    catch(error){
+    catch (error) {
         console.log(error)
     }
-   
+
 }

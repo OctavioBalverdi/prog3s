@@ -1,24 +1,25 @@
 
-import { Button, Checkbox, Form, Input } from 'antd';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { login } from '../actions/log';
+import { Button, Checkbox, Form, Input } from 'antd'
+import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { login } from '../actions/log'
 
-const onFinish = (values) => {
-  // const navigate=useNavigate()
-  // const encontrado=login(values)
-  // if(encontrado){
-    
-  //   navigate('/home')
+const Logins = () => {
 
-  // }
-  console.log('Success:', values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
-const Logins = () => (
-  <Form
+  const onFinish = values => {
+    const navigate = useNavigate()
+    const encontrado = login(values)
+    if (encontrado) {
+      navigate('/home')
+    }
+    onFinishFailed()
+  }
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo)
+  }
+
+  return <Form
     name="basic"
     labelCol={{
       span: 8,
@@ -27,7 +28,7 @@ const Logins = () => (
       span: 16,
     }}
     style={{
-      maxWidth: 600, margin:150
+      maxWidth: 600, margin: 150
     }}
     initialValues={{
       remember: true,
@@ -80,17 +81,18 @@ const Logins = () => (
       }}
     >
       <NavLink to='/home'>
-      <Button type="primary" htmlType="submit" >
-        Entrar
-      </Button>
+        <Button type="secundary" style={{ margin: '20px', border: '1px black solid' }} >
+          Entrar
+        </Button>
       </NavLink>
-     
-      <NavLink to= '/registro'>
-      <Button type="secundary"  style={{ margin:'20px', border: '1px black solid'}}>
-        Registro
-      </Button>
+
+      <NavLink to='/registro'>
+        <Button type="secundary" style={{ margin: '20px', border: '1px black solid' }}>
+          Registro
+        </Button>
       </NavLink>
     </Form.Item>
   </Form>
-);
-export default Logins;
+}
+
+export default Logins
